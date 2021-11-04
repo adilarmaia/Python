@@ -14,11 +14,20 @@ root.config(menu=menuBar)
 def finalizar():     
     messagebox.askquestion("finalizar", message="Deseja fechar?")  # FUNÇÃO DE PERGUNTAR ...
 
+def licenca():
+    messagebox.showinfo("version", message= "version Beta 1.0.21 - Desenvolvedor Adilar Maia")
+
+def erro():
+    messagebox.showerror("erro! guardar", message= "não foi possível guardar")
+
+def atencao():
+    messagebox.showwarning("Atenção!", message="O atual será excluido")
+
 archivoMenu = Menu(menuBar, tearoff=0)
 
 archivoMenu.add_command(label="Novo")
-archivoMenu.add_command(label="Abrir")
-archivoMenu.add_command(label="Guarda")
+archivoMenu.add_command(label="Abrir", command=atencao)
+archivoMenu.add_command(label="Guarda", command=erro)
 archivoMenu.add_command(label="Finalizar", command=finalizar)
 archivoMenu.add_separator()
 archivoMenu.add_command(label="sair", command=root.quit)
@@ -29,7 +38,7 @@ editMenu.add_command(label="Copiar")
 editMenu.add_command(label="Colar")
 
 ajudaMenu = Menu(menuBar, tearoff=0)
-ajudaMenu.add_command(label="Ajuda")
+ajudaMenu.add_command(label="Ajuda", command=licenca)
 ajudaMenu.add_separator()
 
 menuBar.add_cascade(label="Arquivo", menu=archivoMenu)
