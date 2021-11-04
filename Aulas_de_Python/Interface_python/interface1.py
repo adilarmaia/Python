@@ -1,5 +1,8 @@
 
+# INTERFACE COM MENU...
+
 from tkinter import *
+from tkinter import messagebox
 root = Tk()
 root.geometry("400x300")
 root.config(bg="goldenrod3")
@@ -7,12 +10,16 @@ root.title("Menu OS")
 
 menuBar = Menu(root)
 root.config(menu=menuBar)
+
+def finalizar():     
+    messagebox.askquestion("finalizar", message="Deseja fechar?")  # FUNÇÃO DE PERGUNTAR ...
+
 archivoMenu = Menu(menuBar, tearoff=0)
 
 archivoMenu.add_command(label="Novo")
 archivoMenu.add_command(label="Abrir")
 archivoMenu.add_command(label="Guarda")
-archivoMenu.add_command(label="Finalizar")
+archivoMenu.add_command(label="Finalizar", command=finalizar)
 archivoMenu.add_separator()
 archivoMenu.add_command(label="sair", command=root.quit)
 
