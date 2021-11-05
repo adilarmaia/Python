@@ -48,4 +48,24 @@ elif resposta==("YouTube"):
     en.setProperty('rate', 140)
     en.setProperty('volume', 1)
     en.runAndWait()
-    
+       
+    web.open("https://www.youtube.com")
+
+elif resposta ==("toque uma música"):    # AQUI NOS ELIF VOCÊ PODE USAR QUANTOS QUIZER MAS ACONSELHO USAR TAMBÉM A FUNÇÃO DEF PARA DIRECIONAR O QUE DESEJA QUE ELA FAÇA,
+    en.say('Ok, abrindo a música')       # ASSIM SEU CÓDIGO FICA MAS LIMPO E ORGANIZADO COM A FUNÇÃO DEF
+    en.setProperty('voice',b'brasil')
+    en.setProperty('rate', 140)
+    en.setProperty('volume', 1)
+    en.runAndWait()
+    os.system('musica3.mp3')   # AQUI VOCÊ COLOCA A MÚSICA MENCIONA NO SEU PLAYER DENTRO DA PASTA AONDE ESTA ALVO O CÓDIGO E ELA ABRE O PLAYER
+else:
+    en.say('Desculpe, não entendi vou me desligar')
+    en.setProperty('voice', b'brasil')
+    en.setProperty('rate', 140)
+    en.setProperty('volume', 1)
+    en.runAndWait()
+
+#  OBSERVAÇÃO NO LOOP FINAL ELSE VOCÊ PODE COLOCA O LOOP INFINITO SENDO ASSIM ELA FICA ABERTA E VOCÊ TAMBÉM PODE COLOCA A FUNÇÃO MUDO.
+#  ISSO É SÓ UMA BASE ILUSTRAÇÃO EXISTE MAS FUNÇÕES QUE VOCÊ PODE COLOCAR NA SUA ASSISTENTE.
+#  COMO VOZ FEMININA, MASCULINA E ABRIR MAS COISAS, AUTOMATIZAR,  USE A CRIATIVIDADE E PESQUISE MAS FUNÇÕES.
+# NAS FUNÇÃO DE FALA VOCE BOTA AO SEU MODO TÁ OK, É SÓ UM CÓDIGO BASE.
